@@ -2,6 +2,7 @@ import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import CarItem from './src/components/CarItem';
 import {Cars} from './src/res/data';
+import MainNavigation from './routes/nav';
 
 const App = () => {
   const renderCars = () => {
@@ -22,7 +23,7 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView>{renderCars()}</ScrollView>
+      <MainNavigation />
     </View>
   );
 };
@@ -32,8 +33,6 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   card: {
     borderWidth: 1,
