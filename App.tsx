@@ -5,22 +5,7 @@ import {Cars} from './src/res/data';
 import MainNavigation from './routes/nav';
 
 const App = () => {
-  const renderCars = () => {
-    const carsComponents = Cars.map(car => {
-      return (
-        <CarItem
-          brand={car.brand}
-          year={car.year}
-          price={car.price}
-          km={car.km}
-          color={car.color}
-        />
-      );
-    });
-
-    return carsComponents;
-  };
-
+ 
   return (
     <View style={styles.container}>
       <MainNavigation />
