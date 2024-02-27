@@ -18,7 +18,7 @@ const CarItem = props => {
   };
 
   return (
-    <TouchableOpacity onPress={onCardPress}>
+    <TouchableOpacity onPress={onCardPress} >
       <View style={styles.card}>
         <View style={styles.topContainer}>
           {!hideImage && <Image source={img} style={styles.img} />}
