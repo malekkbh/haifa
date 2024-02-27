@@ -18,7 +18,11 @@ const MainNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name={ScreenNames.splash} component={Splash} />
+        <Stack.Screen
+          name={ScreenNames.splash}
+          component={Splash}
+          options={{headerShown: false}}
+        />
         <Stack.Screen name={ScreenNames.home} component={HomeScreen} />
         <Stack.Screen
           name={ScreenNames.ProductScreen}
