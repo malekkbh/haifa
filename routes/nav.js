@@ -5,6 +5,7 @@ import Splash from '../src/Screens/Splash';
 import HomeScreen from '../src/Screens/HomeScreen';
 import ScreenNames from './screenNames';
 import ProductScreen from '../src/Screens/ProductScreen';
+import Cart from '../src/Screens/Cart';
 
 const MainNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -28,6 +29,7 @@ const MainNavigation = () => {
           name={ScreenNames.ProductScreen}
           component={ProductScreen}
         />
+        <Stack.Screen name={ScreenNames.cart} component={Cart} />
       </Stack.Navigator>
     </NavigationContainer>
   );

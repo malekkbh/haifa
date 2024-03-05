@@ -3,12 +3,14 @@ import React from 'react';
 import CarItem from './src/components/CarItem';
 import {Cars} from './src/res/data';
 import MainNavigation from './routes/nav';
+import HaifaProvider from './store/HaifaProvider';
 
 const App = () => {
- 
   return (
     <View style={styles.container}>
-      <MainNavigation />
+      <HaifaProvider>
+        <MainNavigation />
+      </HaifaProvider>
     </View>
   );
 };

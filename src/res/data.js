@@ -8,6 +8,7 @@ export const Cars = [
     price: '40K',
     color: 'blue',
     img: Images.golf(),
+    id: 1,
   },
   {
     brand: 'Toyota',
@@ -16,6 +17,7 @@ export const Cars = [
     price: '10K',
     color: 'red',
     img: Images.hilux(),
+    id: 2,
   },
   {
     brand: 'Kia',
@@ -23,6 +25,7 @@ export const Cars = [
     km: '100K',
     price: '6K',
     img: Images.kia(),
+    id: 3,
   },
   {
     brand: 'Skoda',
@@ -31,6 +34,7 @@ export const Cars = [
     price: '30K',
     color: 'black',
     img: Images.superb(),
+    id: 4,
   },
   {
     brand: 'BMW',
@@ -39,5 +43,6 @@ export const Cars = [
     price: '30K',
     color: 'black',
     img: Images.m5(),
+    id: 5,
   },
 ];

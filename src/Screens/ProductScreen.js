@@ -1,18 +1,24 @@
 import {
   Alert,
+  Button,
   Image,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import CarItem from '../components/CarItem';
+import ScreenNames from '../../routes/screenNames';
+import HaifaContext from '../../store/HaifaContext';
 
 const ProductScreen = props => {
   const car = props.route.params.data;
 
   const [amount, setAmount] = useState(0);
+  const {cart, setCart} = useContext(HaifaContext);
+
+  console.log('cart: ', cart);
 
   /**
    *  const state = useState(0)
@@ -34,6 +40,31 @@ const ProductScreen = props => {
     }
   };
 
+  const checkiFCarInCart = () => {
+    const carObj = cart.find(cartItem => cartItem.id === car.id);
+
+    return !!carObj;
+  };
+
+  const addToCart = () => {
+    if (checkiFCarInCart()) {
+      Alert.alert('Car in Cart');
+      return;
+    }
+
+    const cartCopy = cart;
+    cartCopy.push(car);
+    setCart([...cartCopy]);
+
+    // setCart( prev => {
+    //   return prev.push(car)
+    // })
+  };
+
+  const navigateToCart = () => {
+    props.navigation.navigate(ScreenNames.cart);
+  };
+
   console.log('car: ', car);
   return (
     <View style={styles.container}>
@@ -41,7 +72,7 @@ const ProductScreen = props => {
       <Text style={styles.title}>{`${car.brand} ${car.year}`}</Text>
       <CarItem {...car} hideImage={true} />
 
-      <View style={styles.amountContainer}>
+      {/* <View style={styles.amountContainer}>
         <TouchableOpacity onPress={onAddPress}>
           <Text style={styles.txt}>+</Text>
         </TouchableOpacity>
@@ -51,7 +82,9 @@ const ProductScreen = props => {
         <TouchableOpacity onPress={onRmovePress}>
           <Text style={styles.txt}>-</Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
+      <Button title="add To Cart" onPress={addToCart} />
+      <Button title="Go To Cart" onPress={navigateToCart} />
     </View>
   );
 };

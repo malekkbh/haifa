@@ -14,6 +14,7 @@ const HomeScreen = () => {
           km={car.km}
           color={car.color}
           img={car.img}
+          id={car.id}
         />
       );
     });

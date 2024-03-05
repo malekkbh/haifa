@@ -4,7 +4,7 @@ import ScreenNames from '../../routes/screenNames';
 import {useNavigation} from '@react-navigation/native';
 
 const CarItem = props => {
-  const {brand, year, km, price, color, img, hideImage} = props;
+  const {brand, year, km, price, color, img, hideImage , id} = props;
   //   const brand = props.brand;
   //   const year = props.year;
   //   const km = props.km;
